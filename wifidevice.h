@@ -1,0 +1,14 @@
+#pragma once
+
+typedef struct _MTK_WIFIDIRECTDEVICE
+{
+    // WDF handles associated with this context
+    WDFDEVICE WdfDevice;
+    WIFIDIRECTDEVICE WifiDirectDevice;
+} MTK_WIFIDIRECTDEVICE, * PMTK_WIFIDIRECTDEVICE;
+
+WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(MTK_WIFIDIRECTDEVICE, MtkGetWifiDirectContext);
+
+EVT_WIFI_DEVICE_SEND_COMMAND EvtWiFiDeviceSendCommand;
+EVT_WIFI_DEVICE_CREATE_ADAPTER EvtWiFiDeviceCreateAdapter;
+EVT_WIFI_DEVICE_CREATE_WIFIDIRECTDEVICE EvtWifiDeviceCreateWiFiDirectDevice;
